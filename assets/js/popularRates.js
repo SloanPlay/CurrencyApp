@@ -41,10 +41,10 @@ export async function initializePopularRatesTable() {
         // Renderizar la tabla con los datos obtenidos
         renderRatesTable(tableBody, rates);
 
-        // Iniciar actualizaciones periódicas cada 30 segundos
+        // Iniciar actualizaciones periódicas cada 120 segundos
         setInterval(async () => {
             await updateRatesTable();
-        }, 30000);
+        }, 1200000);
 
     } catch (error) {
         console.error('Error loading popular rates:', error);
