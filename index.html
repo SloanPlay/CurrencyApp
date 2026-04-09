@@ -2,22 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Currency App</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
   <div class="container">
-    <h1>Currency Converter</h1>
+    <h1>💱 Currency Converter</h1>
 
-    <input type="number" id="amount" placeholder="Amount" />
+    <input type="number" id="amount" placeholder="Enter amount (e.g. 100)" />
 
     <div class="selectors">
       <select id="fromCurrency"></select>
+
+      <button id="swapBtn">⇄</button>
+
       <select id="toCurrency"></select>
     </div>
 
     <button id="convertBtn">Convert</button>
+
+    <p id="loading" class="hidden">Converting...</p>
+    <p id="rate"></p>
 
     <h2 id="result">Result: --</h2>
   </div>
