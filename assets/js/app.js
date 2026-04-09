@@ -2,15 +2,14 @@ import { getCodes } from "./api.js";
 import { convertCurrency } from "../../services/exchangeService.js";
 import { populateSelect, showResult } from "./ui.js";
 import { parseAmount } from "./utils.js";
+import { initializePopularRatesTable } from "./popularRates.js";
 
 const amountInput = document.getElementById("amount");
 const fromSelect = document.getElementById("fromCurrency");
 const toSelect = document.getElementById("toCurrency");
 const resultText = document.getElementById("result");
 const convertBtn = document.getElementById("convertBtn");
-
 const swapBtn = document.getElementById("swapBtn");
-
 
 swapBtn.addEventListener("click", async () => {
     const temp = fromSelect.value;
@@ -32,6 +31,9 @@ async function init() {
 
     fromSelect.value = "USD";
     toSelect.value = "DOP";
+
+    // Inicializar la tabla de tasas populares
+    await initializePopularRatesTable();
 }
 
 init();

@@ -24,10 +24,33 @@
 
     <button id="convertBtn">Convert Now</button>
 
-    <p id="loading" class="hidden">🔄 Fetching latest rates...</p>
-    <p id="rate"></p>
-
     <h2 id="result"></h2>
+
+    <!-- Nueva sección de tasas populares -->
+    <div class="popular-rates-section">
+      <div class="section-header">
+        <h3>Popular Exchange Rates</h3>
+        <span class="update-badge">Live Updates</span>
+      </div>
+      
+      <div class="table-container">
+        <table class="rates-table" id="popularRatesTable">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Rate</th>
+              <th>Change (24h)</th>
+            </tr>
+          </thead>
+          <tbody id="ratesTableBody">
+            <tr>
+              <td colspan="4" class="loading-cell">Loading rates...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <script type="module" src="assets/js/app.js"></script>
