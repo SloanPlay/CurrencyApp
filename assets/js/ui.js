@@ -9,6 +9,6 @@ export function populateSelect(select, codes) {
 
 }
 
-export function showResult(resultElement, value) {
-    resultElement.textContent = `Result: ${value.toFixed(2)}`;
+export function showResult(resultElement, value, to) {
+    resultElement.textContent = `${value.toFixed(2)} ${to}`;
 }

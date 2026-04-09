@@ -2,31 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currency App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>💱 Currency Converter Pro | Real-Time Exchange Rates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
   <div class="container">
-    <h1>💱 Currency Converter</h1>
+    <h1>💱 Currency Converter Pro</h1>
 
-    <input type="number" id="amount" placeholder="Enter amount (e.g. 100)" />
+    <input type="number" id="amount" placeholder="Enter amount (e.g. 100)" step="any" />
 
     <div class="selectors">
       <select id="fromCurrency"></select>
-
       <button id="swapBtn">⇄</button>
-
       <select id="toCurrency"></select>
     </div>
 
-    <button id="convertBtn">Convert</button>
+    <button id="convertBtn">Convert Now</button>
 
-    <p id="loading" class="hidden">Converting...</p>
+    <p id="loading" class="hidden">🔄 Fetching latest rates...</p>
     <p id="rate"></p>
 
-    <h2 id="result">Result: --</h2>
+    <h2 id="result"></h2>
   </div>
 
   <script type="module" src="assets/js/app.js"></script>

@@ -9,6 +9,21 @@ const toSelect = document.getElementById("toCurrency");
 const resultText = document.getElementById("result");
 const convertBtn = document.getElementById("convertBtn");
 
+const swapBtn = document.getElementById("swapBtn");
+
+
+swapBtn.addEventListener("click", async () => {
+    const temp = fromSelect.value;
+    fromSelect.value = toSelect.value;
+    toSelect.value = temp;
+
+    const amount = parseAmount(amountInput.value);
+    if (!amount) return;
+
+    const result = await convertCurrency(amount, fromSelect.value, toSelect.value);
+    showResult(resultText, result, toSelect.value);
+});
+
 // INIT
 async function init() {
     const data = await getCodes();
@@ -30,5 +45,5 @@ convertBtn.addEventListener("click", async () => {
     if (!amount) return alert("Enter a valid amount");
 
     const result = await convertCurrency(amount, from, to);
-    showResult(resultText, result);
+    showResult(resultText, result, to);
 });
